@@ -1,0 +1,8 @@
+{
+  "name": "babel-plugin-transform-react-jsx-sink-test-id",
+  "version": "1.0.0",
+  "description": "Render any testid to the actual DOM by sinking it to the first non-Component element",
+  "main": "src/index.js",
+  "author": "Miklos Megyes <m.miklos05@gmail.com>",
+  "license": "MIT"
+}
