@@ -1,7 +1,7 @@
 module.exports = ({ types: t }) => {
   const TESTID = 'data-test';
   const SINKER_SOURCE = 'babel-plugin-transform-react-jsx-sink-test-id/sinker';
-  const sinker = '_sinker';
+  const SINKER = '_sinker';
 
   const readTestidValue = attr => {
     switch (attr.value.type) {
@@ -45,8 +45,8 @@ module.exports = ({ types: t }) => {
         node.__didSink = true;
         path.replaceWith(node);
 
-        // wrap the jsx expression to the sinker function
-        let wrapped = t.callExpression(t.identifier(sinker), [
+        // wrap the jsx expression with the sinker function
+        let wrapped = t.callExpression(t.identifier(SINKER), [
           path.parentPath.node,
           testidValue,
         ]);
@@ -60,7 +60,7 @@ module.exports = ({ types: t }) => {
         if (!program.__hasImportSinker) {
           program.node.body.unshift(
             t.importDeclaration(
-              [t.importDefaultSpecifier(t.identifier(sinker))],
+              [t.importDefaultSpecifier(t.identifier(SINKER))],
               t.stringLiteral(SINKER_SOURCE),
             ),
           );
