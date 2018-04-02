@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`react-jsx-sink-test-id should not wrap jsx without testid 1`] = `
+"
+<Foo color=\\"yellow\\" />;"
+`;
+
+exports[`react-jsx-sink-test-id should work with attribute expressions 1`] = `
+"import _sinker from \\"babel-plugin-transform-react-jsx-sink-test-id/sinker\\";
+
+import React from 'react';
+
+class App extends React.Component {
+  render() {
+    const a = _sinker(<Foo color=\\"red\\" />, \\"hello\\");
+    const b = _sinker(<Foo><h1>text</h1></Foo>, \\"hi\\");
+    const c = _sinker(<Foo color=\\"red\\" />, 10);
+    const d = _sinker(<Foo color=\\"red\\" />, <hr />);
+    const e = _sinker(<Foo color=\\"red\\" />, 'hello' + 10);
+    const f = _sinker(<Foo color=\\"red\\" />, \`asd20\`);
+    return _sinker(<Foo color=\\"red\\" />, true ? 'true' : 'false');
+  }
+}"
+`;
+
+exports[`react-jsx-sink-test-id should wrap jsx to the sinker 1`] = `
+"import _sinker from \\"babel-plugin-transform-react-jsx-sink-test-id/sinker\\";
+
+_sinker(<Foo />, \\"bar\\");"
+`;
