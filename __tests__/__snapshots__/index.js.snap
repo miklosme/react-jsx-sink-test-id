@@ -28,3 +28,19 @@ exports[`react-jsx-sink-test-id should wrap jsx to the sinker 1`] = `
 
 _sinker(<Foo />, \\"bar\\");"
 `;
+
+exports[`react-jsx-sink-test-id should wrap properly when nested 1`] = `
+"import _sinker from \\"babel-plugin-transform-react-jsx-sink-test-id/sinker\\";
+
+import React from 'react';
+
+const x = <Foo color=\\"red\\">
+        {_sinker(<Bar />, \\"hello\\")} 
+      </Foo>;
+
+_sinker(<Bar />, \\"hello\\");
+
+const y = _sinker(<Bar />, \\"hello\\");
+
+const z = <Baz render={_sinker(<Foo />, \\"foo\\")} />;"
+`;

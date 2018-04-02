@@ -46,10 +46,13 @@ module.exports = ({ types: t }) => {
         path.replaceWith(node);
 
         // wrap the jsx expression to the sinker function
-        const wrapped = t.callExpression(t.identifier(sinker), [
+        let wrapped = t.callExpression(t.identifier(sinker), [
           path.parentPath.node,
           testidValue,
         ]);
+        if (t.isJSXElement(path.parentPath.parentPath.node)) {
+          wrapped = t.jSXExpressionContainer(wrapped);
+        }
         path.parentPath.replaceWith(wrapped);
 
         // import the sinker function

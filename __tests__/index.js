@@ -40,4 +40,20 @@ describe('react-jsx-sink-test-id', () => {
     `;
     expect(transform(source)).toMatchSnapshot();
   });
+  it('should wrap properly when nested', () => {
+    const source = `
+      import React from 'react';
+
+      const x = <Foo color="red">
+        <Bar data-test="hello" /> 
+      </Foo>;
+      
+      <Bar data-test="hello" />;
+      
+      const y = <Bar data-test="hello" />;
+      
+      const z = <Baz render={<Foo data-test="foo" />} />;
+    `;
+    expect(transform(source)).toMatchSnapshot();
+  });
 });
