@@ -6,9 +6,13 @@
   "author": "Miklos Megyes <m.miklos05@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@cypress/webpack-preprocessor": "^2.0.1",
     "babel-core": "^6.26.0",
     "babel-plugin-syntax-jsx": "^6.18.0",
-    "jest": "^22.4.3"
+    "cypress": "^2.1.0",
+    "jest": "^22.4.3",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   },
   "scripts": {
     "test": "jest"

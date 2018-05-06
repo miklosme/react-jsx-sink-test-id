@@ -18,7 +18,7 @@ module.exports = ({ types: t }) => {
   return {
     name: 'react-jsx-sink-test-id',
     visitor: {
-      JSXOpeningElement(path) {
+      JSXOpeningElement(path, state) {
         if (path.node.__didSink) {
           return;
         }
@@ -61,7 +61,7 @@ module.exports = ({ types: t }) => {
           program.node.body.unshift(
             t.importDeclaration(
               [t.importDefaultSpecifier(t.identifier(SINKER))],
-              t.stringLiteral(SINKER_SOURCE),
+              t.stringLiteral(state.opts.__sinker || SINKER_SOURCE),
             ),
           );
           program.__hasImportSinker = true;
