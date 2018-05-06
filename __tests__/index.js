@@ -53,6 +53,8 @@ describe('react-jsx-sink-test-id', () => {
       const y = <Bar data-test="hello" />;
       
       const z = <Baz render={<Foo data-test="foo" />} />;
+      
+      const e = <Foo>{x => <Foo value={x} data-test="foo" />}</Foo>
     `;
     expect(transform(source)).toMatchSnapshot();
   });

@@ -42,5 +42,7 @@ _sinker(<Bar />, \\"hello\\");
 
 const y = _sinker(<Bar />, \\"hello\\");
 
-const z = <Baz render={_sinker(<Foo />, \\"foo\\")} />;"
+const z = <Baz render={_sinker(<Foo />, \\"foo\\")} />;
+
+const e = <Foo>{x => _sinker(<Foo value={x} />, \\"foo\\")}</Foo>;"
 `;
