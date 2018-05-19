@@ -7,7 +7,7 @@ const Box = ({ children, grey }) => (
     <div style={{ border: '1px solid black', padding: 5, background: grey ? 'grey' : 'transparent' }}>{children}</div>
 );
 
-const GreyBox = props => <Box {...props} grey />;
+const GreyBox = ({ children }) => <Box grey>{children}</Box>;
 
 class App extends React.Component {
     render() {
