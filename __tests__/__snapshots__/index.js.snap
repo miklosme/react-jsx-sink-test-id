@@ -6,7 +6,7 @@ exports[`react-jsx-sink-test-id should not wrap jsx without testid 1`] = `
 `;
 
 exports[`react-jsx-sink-test-id should work with attribute expressions 1`] = `
-"import _sinker from \\"babel-plugin-transform-react-jsx-sink-test-id/sinker\\";
+"import _sinker from \\"babel-plugin-transform-react-jsx-sink-test-id/sinker.js\\";
 
 import React from 'react';
 
@@ -24,13 +24,13 @@ class App extends React.Component {
 `;
 
 exports[`react-jsx-sink-test-id should wrap jsx to the sinker 1`] = `
-"import _sinker from \\"babel-plugin-transform-react-jsx-sink-test-id/sinker\\";
+"import _sinker from \\"babel-plugin-transform-react-jsx-sink-test-id/sinker.js\\";
 
 _sinker(<Foo />, \\"bar\\");"
 `;
 
 exports[`react-jsx-sink-test-id should wrap properly when nested 1`] = `
-"import _sinker from \\"babel-plugin-transform-react-jsx-sink-test-id/sinker\\";
+"import _sinker from \\"babel-plugin-transform-react-jsx-sink-test-id/sinker.js\\";
 
 import React from 'react';
 

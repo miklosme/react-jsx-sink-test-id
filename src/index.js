@@ -1,6 +1,6 @@
 module.exports = ({ types: t }) => {
   const TESTID = 'data-test';
-  const SINKER_SOURCE = 'babel-plugin-transform-react-jsx-sink-test-id/sinker';
+  const SINKER_SOURCE = 'babel-plugin-transform-react-jsx-sink-test-id/sinker.js';
   const SINKER = '_sinker';
 
   const readTestidValue = attr => {
