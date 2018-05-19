@@ -11,10 +11,17 @@
     "babel-plugin-syntax-jsx": "^6.18.0",
     "cypress": "^2.1.0",
     "jest": "^22.4.3",
+    "prettier": "^1.12.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   },
   "scripts": {
     "test": "jest"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 4,
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }

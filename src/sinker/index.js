@@ -1,21 +1,23 @@
 import React from 'react';
 
-const TESTID = 'test-data';
+const TESTID = 'data-test';
 
-function mutate(children, testID) {
-    let found = false;
-    return React.Children.map(children, child => {
-        if (!found) {
-            if (typeof children.type === 'string') {
-                found = true;
-                return React.cloneElement(child, {[TESTID]: testID});
-            }
-            return mutate(child.props.children, testID);
-        }
-        return child;
-    })
-}
+const addTestID = (element, testID) => React.cloneElement(element, {[TESTID]: testID});
 
-module.exports = function sinker(jsx, testID) {
-    return React.cloneElement(jsx, undefined, ...(mutate(jsx.children, testID) || []));
+module.exports = function sinker(element, testID) {
+    return element;
+    // if (typeof element.type === 'string') {
+    //     return addTestID(element, testID);
+    // }
+    // let found = false;
+    // return React.Children.map(element.children, child => {
+    //     if (found) {
+    //         return child;
+    //     }
+    //     if (typeof child.type === 'string') {
+    //         found = true;
+    //         return addTestID(element, testID);
+    //     }
+    //     return sinker(child, testID)
+    // });
 };
